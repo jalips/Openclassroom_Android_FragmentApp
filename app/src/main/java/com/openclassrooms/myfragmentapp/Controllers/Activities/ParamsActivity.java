@@ -1,19 +1,22 @@
 package com.openclassrooms.myfragmentapp.Controllers.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.openclassrooms.myfragmentapp.Controllers.Fragments.ParamsFragment;
 import com.openclassrooms.myfragmentapp.R;
 
-public class ParamsActivity extends AppCompatActivity {
+public class ParamsActivity extends BaseActivity {
 
     private ParamsFragment paramsFragment;
 
     @Override
+    protected int getLayout() {
+        return R.layout.activity_params;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_params);
 
         paramsFragment = (ParamsFragment) getSupportFragmentManager().findFragmentById(R.id.frame_layout_params);
 
