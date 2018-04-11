@@ -1,25 +1,25 @@
 package com.openclassrooms.myfragmentapp.Controllers.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.openclassrooms.myfragmentapp.Controllers.Fragments.DetailFragment;
 import com.openclassrooms.myfragmentapp.Controllers.Fragments.MainFragment;
 import com.openclassrooms.myfragmentapp.R;
 
-public class MainActivity extends AppCompatActivity implements MainFragment.OnButtonClickedListener {
+public class MainActivity extends BaseActivity implements MainFragment.OnButtonClickedListener {
 
     //Declare our two fragments
     private MainFragment mainFragment;
     private DetailFragment detailFragment;
 
     @Override
+    protected int getLayout() { return R.layout.activity_main; }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         //Configure and show it
         this.configureAndShowMainFragment();

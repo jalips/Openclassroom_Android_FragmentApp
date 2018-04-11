@@ -1,13 +1,11 @@
 package com.openclassrooms.myfragmentapp.Controllers.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.openclassrooms.myfragmentapp.Controllers.Fragments.DetailFragment;
-import com.openclassrooms.myfragmentapp.Controllers.Fragments.MainFragment;
 import com.openclassrooms.myfragmentapp.R;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends BaseActivity {
 
     //Create static variable to identify Intent
     public static final String EXTRA_BUTTON_TAG = "com.openclassrooms.myfragmentapp.Controllers.Activities.DetailActivity.EXTRA_BUTTON_TAG";
@@ -16,9 +14,12 @@ public class DetailActivity extends AppCompatActivity {
     private DetailFragment detailFragment;
 
     @Override
+    protected int getLayout() { return R.layout.activity_detail; }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+
         //Configure and show home fragment
         this.configureAndShowDetailFragment();
     }
