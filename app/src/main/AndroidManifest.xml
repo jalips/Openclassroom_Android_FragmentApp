@@ -9,16 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Controllers.Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
-        <activity android:name=".Controllers.Activities.DetailActivity"/>
-        <activity android:name=".Controllers.Activities.ParamsActivity">
+
+        <activity android:name=".Controllers.Activities.DetailActivity"
+                  android:parentActivityName=".Controllers.Activities.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Controllers.Activities.MainActivity" />
         </activity>
+
+        <activity android:name=".Controllers.Activities.ParamsActivity"
+            android:parentActivityName=".Controllers.Activities.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Controllers.Activities.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
