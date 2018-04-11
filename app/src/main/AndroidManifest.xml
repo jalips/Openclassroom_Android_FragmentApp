@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.openclassrooms.myfragmentapp">
+          package="com.openclassrooms.myfragmentapp">
 
     <application
         android:allowBackup="true"
@@ -11,12 +11,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Controllers.Activities.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Controllers.Activities.DetailActivity"></activity>
+        <activity android:name=".Controllers.Activities.DetailActivity"/>
+        <activity android:name=".Controllers.Activities.ParamsActivity">
+        </activity>
     </application>
 
 </manifest>

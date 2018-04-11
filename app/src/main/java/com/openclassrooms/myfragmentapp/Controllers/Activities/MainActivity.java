@@ -2,7 +2,10 @@ package com.openclassrooms.myfragmentapp.Controllers.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.openclassrooms.myfragmentapp.Controllers.Fragments.DetailFragment;
 import com.openclassrooms.myfragmentapp.Controllers.Fragments.MainFragment;
@@ -24,6 +27,26 @@ public class MainActivity extends BaseActivity implements MainFragment.OnButtonC
         //Configure and show it
         this.configureAndShowMainFragment();
         this.configureAndShowDetailFragment();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //2 - Inflate the menu and add it to the Toolbar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //3 - Handle actions on menu items
+        switch (item.getItemId()) {
+            case R.id.menu_main_params:
+                Intent i = new Intent(this, ParamsActivity.class);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     // --------------
