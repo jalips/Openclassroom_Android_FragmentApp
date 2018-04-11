@@ -5,6 +5,8 @@ import android.os.Bundle;
 import com.openclassrooms.myfragmentapp.Controllers.Fragments.DetailFragment;
 import com.openclassrooms.myfragmentapp.R;
 
+import icepick.State;
+
 public class DetailActivity extends BaseActivity {
 
     //Create static variable to identify Intent
@@ -12,6 +14,8 @@ public class DetailActivity extends BaseActivity {
 
     //Declare detail fragment
     private DetailFragment detailFragment;
+
+    @State int buttonTag;
 
     @Override
     protected int getLayout() { return R.layout.activity_detail; }
@@ -56,7 +60,7 @@ public class DetailActivity extends BaseActivity {
     //Update DetailFragment with tag passed from Intent
     private void updateDetailFragmentTextViewWithIntentTag(){
         //Get button's tag from intent
-        int buttonTag = getIntent().getIntExtra(EXTRA_BUTTON_TAG, 0);
+        buttonTag = getIntent().getIntExtra(EXTRA_BUTTON_TAG, 0);
         //Update DetailFragment's TextView
         detailFragment.updateTextView(buttonTag);
     }

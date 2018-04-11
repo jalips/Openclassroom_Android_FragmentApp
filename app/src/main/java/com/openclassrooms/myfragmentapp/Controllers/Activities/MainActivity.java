@@ -47,8 +47,6 @@ public class MainActivity extends BaseActivity implements MainFragment.OnButtonC
         }
     }
 
-
-
     // --------------
     // FRAGMENTS
     // --------------
